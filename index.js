@@ -228,29 +228,72 @@
 //------------------------------------------------------BINARY SEARCH BY RECURSION--------------------------------------------
 
 
-function binaryRecursion(arr, target){
-    return search(arr, target, 0, arr.length -1)
+// function binaryRecursion(arr, target){
+//     return search(arr, target, 0, arr.length -1)
+// }
+
+// function search(arr, target, left, right){
+//     if(left > right){
+//         return -1
+//     }
+
+//     let mid = Math.floor((left + right) / 2)
+//     if(target === arr[mid]){
+//         return mid
+//     }
+
+//     if(target < arr[mid]){
+//         return search(arr,target, left, mid + 1)
+//     }else{
+//         return search(arr,target, mid -1, right)
+//     }
+// }
+
+// let array = [1,3,5,7,9,11,13]
+// console.log(binaryRecursion(array,7))
+
+
+
+
+//------------------------------------------------------BINARY SEARCH BY RECURSION--------------------------------------------
+
+
+class Node {
+    constructor(value){
+        this.value = value
+        this.next = 0
+    }
 }
 
-function search(arr, target, left, right){
-    if(left > right){
-        return -1
+
+class linkedList {
+    constructor(){
+        this.head = null 
+        this.size = 0
     }
 
-    let mid = Math.floor((left + right) / 2)
-    if(target === arr[mid]){
-        return mid
+    isEmpty(){
+        return this.size === 0
     }
 
-    if(target < arr[mid]){
-        return search(arr,target, left, mid + 1)
-    }else{
-        return search(arr,target, mid -1, right)
+    getSize(){
+        return this.size
+    }
+
+    prepend(value){
+        const node = new Node(value)
+        if(this.isEmpty()){
+            this.head = node
+        }else{
+            this.next = head 
+            this.head = node 
+        }
+        this.size++
     }
 }
 
-let array = [1,3,5,7,9,11,13]
-console.log(binaryRecursion(array,7))
 
-
-
+const list = new linkedList()
+console.log(list.isEmpty())
+console.log(list.getSize())
+console.log(list.prepend(10))
