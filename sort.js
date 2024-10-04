@@ -122,3 +122,28 @@
 
 
 
+// function mergeSort(arr){
+//     if(arr.length < 2){
+//         return arr
+//     }
+//     let mid = Math.floor(arr.length/2)
+//     let left = arr.slice(0,mid)
+//     let right = arr.slice(mid)
+//     return merge(mergeSort(left), mergeSort(right))
+// }
+// function merge(left,right){
+//     let sorted = []
+//     while(left.length && right.length){
+//         if(left[0] > right[0]){
+//             sorted.push(right.shift())
+//         }else {
+//             sorted.push(left.shift())
+//         }
+//     }
+//     return [...sorted, ...left, ...right]
+// }
+// const array = [5,4,6,8,3,1,9,2,0]
+// let sortFour = mergeSort(array)
+// let mid = Math.floor(array.length/2)
+// console.log(sortFour.slice(mid-2,mid+2))
+
