@@ -153,4 +153,4 @@ function occurrence(arr){
     }
     return occureNum
 }
-console.log(occurrence(array))
+console.log(occurrence(array)) 
