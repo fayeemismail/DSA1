@@ -54,8 +54,8 @@ class BinarySearchTree {
 const bst = new BinarySearchTree()
 console.log(bst.isEmpty())
 
-bst.insert(10)
-bst.insert(15)
-bst.insert(5)
+// bst.insert(10)
+// bst.insert(15)
+// bst.insert(5)
 
-console.log(bst.search(5))
+// console.log(bst.search(5))
