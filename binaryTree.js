@@ -5,51 +5,51 @@ class Node {
         this.right = null
     }
 }
-class BinarySearchTree {
-    constructor(){
-        this.root = null
-    }
-    isEmpty(){
-        return this.root == null
-    }
-    insert(value){
-        const node = new Node(value)
-        if(this.root == null){
-            this.root = node
-        }else{
-            this.insertNode(this.root, node)
-        }
-    }
-    insertNode(root, node){
-        if(root.value > node.value){
-            if(root.left == null){
-                root.left = node
-            }else{
-                this.insertNode(root.left, node)
-            }
-        } else {
-            if(root.right == null){
-                root.right = node
-            } else {
-                this.insertNode(root.right, node)
-            }
-        }
-    }
+// class BinarySearchTree {
+//     constructor(){
+//         this.root = null
+//     }
+//     isEmpty(){
+//         return this.root == null
+//     }
+//     insert(value){
+//         const node = new Node(value)
+//         if(this.root == null){
+//             this.root = node
+//         }else{
+//             this.insertNode(this.root, node)
+//         }
+//     }
+//     insertNode(root, node){
+//         if(root.value > node.value){
+//             if(root.left == null){
+//                 root.left = node
+//             }else{
+//                 this.insertNode(root.left, node)
+//             }
+//         } else {
+//             if(root.right == null){
+//                 root.right = node
+//             } else {
+//                 this.insertNode(root.right, node)
+//             }
+//         }
+//     }
     
-    search(root, value){
-        if(!root){
-            return false
-        } else {
-            if(root.value == value){
-                return true
-            } else if (root.value > value) {
-                return search(root.left, value)
-            } else {
-                return search(root.right, value)
-            }
-        }
-    }
-}
+//     search(root, value){
+//         if(!root){
+//             return false
+//         } else {
+//             if(root.value == value){
+//                 return true
+//             } else if (root.value > value) {
+//                 return search(root.left, value)
+//             } else {
+//                 return search(root.right, value)
+//             }
+//         }
+//     }
+// }
 
 // const bst = new BinarySearchTree()
 // console.log(bst.isEmpty())
