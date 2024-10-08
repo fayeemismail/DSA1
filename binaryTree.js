@@ -76,93 +76,93 @@
 
 
 
-class Node {
-    constructor(value){
-        this.value = value
-        this.left = null
-        this.right = null
-    }
-}
-class binarySearchTree {
-    constructor(){
-        this.root = null
-    }
-    insert(value){
-        const node = new Node(value)
-        if(this.root == null){
-            this.root = node
-        } else {
-            this.insertNode(this.root, node)
-        }
-    }
-    insertNode(root,node){
-        if(root.value > node.value){
-            if(root.left == null){
-                root.left = node
-            } else {
-                this.insertNode(root.left, node)
-            }
-        } else {
-            if(root.right == null){
-                root.right = node
-            } else {
-                this.insertNode(root.right, node)
-            }
-        }
-    }
-    search(root, value){
-        if(!root){
-            return false
-        } else {
-            if(root.value == value){
-                return true
-            } else if (root.value > value){
-                return this.search(root.left, value)
-            } else {
-                return this.search(root.right, value)
-            }
-        }
-    }
+// class Node {
+//     constructor(value){
+//         this.value = value
+//         this.left = null
+//         this.right = null
+//     }
+// }
+// class binarySearchTree {
+//     constructor(){
+//         this.root = null
+//     }
+//     insert(value){
+//         const node = new Node(value)
+//         if(this.root == null){
+//             this.root = node
+//         } else {
+//             this.insertNode(this.root, node)
+//         }
+//     }
+//     insertNode(root,node){
+//         if(root.value > node.value){
+//             if(root.left == null){
+//                 root.left = node
+//             } else {
+//                 this.insertNode(root.left, node)
+//             }
+//         } else {
+//             if(root.right == null){
+//                 root.right = node
+//             } else {
+//                 this.insertNode(root.right, node)
+//             }
+//         }
+//     }
+//     search(root, value){
+//         if(!root){
+//             return false
+//         } else {
+//             if(root.value == value){
+//                 return true
+//             } else if (root.value > value){
+//                 return this.search(root.left, value)
+//             } else {
+//                 return this.search(root.right, value)
+//             }
+//         }
+//     }
     
-    preOrder(root){
-        if(root){
-            console.log(root.value)
-            this.preOrder(root.left)
-            this.preOrder(root.right)
-        }
-    }
+//     preOrder(root){
+//         if(root){
+//             console.log(root.value)
+//             this.preOrder(root.left)
+//             this.preOrder(root.right)
+//         }
+//     }
     
-    inOrder(root){
-        if(root){
-            this.inOrder(root.left)
-            console.log(root.value)
-            this.inOrder(root.right)
-        }
-    }
+//     inOrder(root){
+//         if(root){
+//             this.inOrder(root.left)
+//             console.log(root.value)
+//             this.inOrder(root.right)
+//         }
+//     }
     
-    postOrder(root){
-        if(root){
-            this.postOrder(root.left)
-            this.postOrder(root.right)
-            console.log(root.value)
-        }
-    }
+//     postOrder(root){
+//         if(root){
+//             this.postOrder(root.left)
+//             this.postOrder(root.right)
+//             console.log(root.value)
+//         }
+//     }
     
-    levelOrder(){
-        let queue = []
-        queue.push(this.root)
-        while(queue.length){
-            let current = queue.shift()
-            console.log(current.value)
-            if(current.left){
-                queue.push(current.left)
-            }
-            if(current.right){
-                queue.push(current.right)
-            }
-        }
-    }
-}
+//     levelOrder(){
+//         let queue = []
+//         queue.push(this.root)
+//         while(queue.length){
+//             let current = queue.shift()
+//             console.log(current.value)
+//             if(current.left){
+//                 queue.push(current.left)
+//             }
+//             if(current.right){
+//                 queue.push(current.right)
+//             }
+//         }
+//     }
+// }
 
 // const bst = new binarySearchTree()
 // bst.insert(10)
