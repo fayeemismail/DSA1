@@ -164,12 +164,12 @@ class binarySearchTree {
     }
 }
 
-const bst = new binarySearchTree()
-bst.insert(10)
-bst.insert(15)
-bst.insert(5)
-bst.insert(3)
-bst.insert(7)
+// const bst = new binarySearchTree()
+// bst.insert(10)
+// bst.insert(15)
+// bst.insert(5)
+// bst.insert(3)
+// bst.insert(7)
 
 // console.log(bst.search(bst.root,20))
 // bst.preOrder(bst.root)
