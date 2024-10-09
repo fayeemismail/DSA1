@@ -214,7 +214,7 @@ class binarySearchTree {
     constructor(){
         this.root = null
     }
-    insert(value) {
+    insert(value){
         const node = new Node(value)
         if(this.root == null){
             this.root = node
@@ -222,7 +222,7 @@ class binarySearchTree {
             this.insertNode(this.root, node)
         }
     }
-    insertNode(root, node){
+    insertNode(root,node){
         if(root.value > node.value){
             if(root.left == null){
                 root.left = node
@@ -233,13 +233,14 @@ class binarySearchTree {
             if(root.right == null){
                 root.right = node
             } else {
-                this.insertNode(root.right,node)
+                this.insertNode(root.right, node)
             }
         }
     }
+    
     search(root,value){
         if(!root){
-            return false
+            return false 
         } else {
             if(root.value == value){
                 return true
@@ -253,16 +254,15 @@ class binarySearchTree {
     
     preOrder(root){
         if(root){
-            console.log(root.value, 'pre')
+            console.log(root.value)
             this.preOrder(root.left)
             this.preOrder(root.right)
         }
     }
-    
     inOrder(root){
         if(root){
             this.inOrder(root.left)
-            console.log(root.value, 'in')
+            console.log(root.value)
             this.inOrder(root.right)
         }
     }
@@ -271,10 +271,24 @@ class binarySearchTree {
         if(root){
             this.postOrder(root.left)
             this.postOrder(root.right)
-            console.log(root.value, 'post')
+            console.log(root.value)
         }
     }
     
+    levelOrder(root){
+        let queue = []
+        queue.push(this.root)
+        while(queue.length){
+            let current = queue.shift()
+            console.log(current.value)
+            if(current.left){
+                queue.push(current.left)
+            }
+            if(current.right){
+                queue.push(current.right)
+            }
+        }
+    }
     min(root){
         if(!root.left){
             return root.value
@@ -282,6 +296,7 @@ class binarySearchTree {
             return this.min(root.left)
         }
     }
+    
     max(root){
         if(!root.right){
             return root.value
@@ -289,20 +304,51 @@ class binarySearchTree {
             return this.max(root.right)
         }
     }
+    
+    delete(value){
+        this.root = this.deleteNode(this.root,value)
+    }
+    
+    deleteNode(root, value){
+        if(root == null){
+            return root
+        }
+        if(root.value > value){
+                    root.left = this.deleteNode(root.left, value)
+        } else if(root.value < value){
+            root.right = this.deleteNode(root.right, value)
+        } else {
+            if(!root.left && !root.right){
+                return null
+            }
+            
+            if(!root.left){
+                return root.right
+            } else if(!root.right){
+                return root.left
+            }
+            root.value = this.min(root.right)
+            root.right = this.deleteNode(root.right, root.value)
+        }
+        return root
+    }
+    
 }
 
-let bst = new binarySearchTree()
+
+const bst = new binarySearchTree()
 bst.insert(10)
 bst.insert(15)
 bst.insert(5)
 bst.insert(3)
-bst.insert(7)
+bst.insert(12)
 
-console.log(bst.search(bst.root,5))
-bst.preOrder(bst.root)
-bst.inOrder(bst.root)
+console.log(bst.search(bst.root,110))
 bst.postOrder(bst.root)
-
-console.log('------------')
-console.log(bst.min(bst.root))
 console.log(bst.max(bst.root))
+
+bst.levelOrder(bst.root)
+
+bst.delete(10)
+bst.delete(7)
+bst.levelOrder(bst.root)
