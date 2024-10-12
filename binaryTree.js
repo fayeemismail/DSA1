@@ -357,6 +357,11 @@
 
 
 
+
+
+//--------------------------------------------------------SECOND LARGEST
+
+
 // class Node {
 //     constructor(value){
 //         this.value = value
@@ -532,3 +537,42 @@
 // bst.inOrder(bst.root)
 
 // console.log(bst.secondLargest(bst.root))
+
+
+
+
+
+
+
+class Node {
+    constructor(value){
+        this.value = value
+        this.left = null
+        this.right = null
+    }
+}
+
+function same (first, second){
+    if(first == null && second == null){
+        return true
+    }
+    if(first == null || second == null){
+        return false
+    }
+    return (first.value == second.value)&&
+    same(first.left , second.left)&&
+    same(first.right , second.right)
+}
+
+
+const first = new Node(10)
+first.left = new Node(5)
+first.right = new Node(15)
+first.left.left = new Node(3)
+
+const second = new Node(10)
+second.left = new Node(5)
+second.left.left = new Node(3)
+second.right = new Node(15)
+
+console.log(same(first, second))
