@@ -50,3 +50,4 @@ trie.insert('fayeem')
 
 console.log(trie.search('fayeem'))
 console.log(trie.starts('fayy'))
+
