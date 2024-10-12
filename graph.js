@@ -89,6 +89,14 @@ class Graph {
             }
         }
     }
+    
+    degreeVertex(vertex){
+        if(this.aList[vertex]){
+            return this.aList[vertex].size
+        } else {
+            return 0
+        }
+    }
 }
 
 
@@ -98,6 +106,7 @@ graph.addEdge('A', 'B')
 graph.addEdge('B', 'C')
 graph.addEdge('C', 'D')
 graph.addEdge('D', 'B')
+graph.addEdge('D', 'E')
 
 
 // graph.display()
@@ -106,3 +115,5 @@ graph.display()
 console.log(graph.bfs('C', 'D'))
 
 console.log(graph.hasEdge('C', 'D'))
+
+console.log(graph.degreeVertex('D'))
