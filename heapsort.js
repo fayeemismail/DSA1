@@ -36,3 +36,9 @@ function heapsort(arr){
 let array = [3,8,6,9,1,2,4,5,7]
 heapsort(array)
 console.log(array)  
+
+
+
+
+
+
